@@ -2,13 +2,37 @@
     --main-color:#9085BC;
 }
 
-body {
-  text-family: calibri;
+* {
+    text-family: 'Calibri';
+    margin: 0;    
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .top-border {
   background-color: #--main-color;
   padding: 50px;
   
+}
+
+#cute-logo {
+    width: 60vw;
+}
+
+nav {
+    font-weight: 400;
+}
+
+nav > ul {
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li {
+    display: list-item;
+    list-style-type: url('https://i.pinimg.com/736x/8d/2e/23/8d2e2395df1412665f92405f84c8c72f.jpg');
 }
 
