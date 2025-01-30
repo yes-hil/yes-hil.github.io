@@ -1,4 +1,14 @@
+:root {
+    --main-color:#9085BC;
+}
+
 body {
-  background-color: #9085BC;
+  text-family: calibri;
+}
+
+.top-border {
+  background-color: #--main-color;
+  padding: 50px;
+  
 }
 
