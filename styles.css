@@ -47,3 +47,16 @@ section h1 {
     font-size: 32px;
     margin-bottom: 20px;
 }
+
+.animate1 {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #9085BC;
+    color: white;
+    border: solid 1px #c8b6e3;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
