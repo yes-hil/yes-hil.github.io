@@ -37,6 +37,12 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+#cute-logo {
+    padding: 5px;
+    width: 150px;
+    border-radius: 8px;
+}
+
 section {
     padding: 50px 20px;
     text-align: center;
