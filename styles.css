@@ -27,7 +27,8 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 28px;
+    font-weight: bold;
     padding: 10px 20px;
     display: block;
 }
@@ -35,12 +36,6 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #575757;
     border-radius: 5px;
-}
-
-#cute-logo {
-    padding: 5px;
-    width: 150px;
-    border-radius: 8px;
 }
 
 section {
