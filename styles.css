@@ -46,17 +46,24 @@ section {
 section h1 {
     font-size: 32px;
     margin-bottom: 20px;
+    padding: 50px;
 }
 
 .animate1 {
     padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
-    background-color: #9085BC;
+    background-image: linear-gradient(#b2abcf 0px,  #9085BC 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: white;
     border: solid 1px #c8b6e3;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.animate1:hover {
+    transform: scale(1.1);
+    background-color: #2980b9;
 }
