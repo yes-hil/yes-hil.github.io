@@ -3,19 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Heart Disease Analysis - Project 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Project 1: Data Analysis with SQL</h1>
-    <div>
-        <img src="path/to/project-image.png" alt="Project Image">
-        <p>This project demonstrates data analysis using SQL and Power BI.</p>
-    </div>
-    <div>
-        <h2>Visuals and Analysis</h2>
-        <img src="path/to/dashboard-image.png" alt="Power BI Dashboard">
-        <p>Power BI dashboards showcasing the results of the analysis.</p>
-    </div>
+
+    <h1>Heart Disease Analysis with SQL & Power BI</h1>
+    
+    <h2>Overview</h2>
+    <p>This project explores heart disease risk factors using SQL queries and visualizes key insights with Power BI.</p>
+    
+    <h2>SQL Query Example</h2>
+    <pre>
+SELECT 
+    HeartDisease, 
+    AVG(Cholesterol) AS AvgCholesterol  
+FROM heart_failure_staging  
+GROUP BY HeartDisease;
+    </pre>
+
+    <h2>Power BI Visualizations</h2>
+    
+    <h3>Cholesterol vs. Heart Disease</h3>
+    <img src="screenshots/cholesterol_analysis.png" alt="Cholesterol Analysis">
+    
+    <h3>Heart Disease by Age Group</h3>
+    <img src="screenshots/heart_disease_age.png" alt="Heart Disease by Age">
+
+    <h2>Download Files</h2>
+    <p><a href="heart_failure_project.sql" download>Download SQL Queries</a></p>
+    <p><a href="heart_failure_dashboard.pbix" download>Download Power BI Dashboard</a></p>
+
 </body>
 </html>
+
