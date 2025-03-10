@@ -32,12 +32,20 @@
 </head>
 <body>
 
-    <h1>Heart Disease Analysis with SQL & Power BI</h1>
+    <h1>Heart Disease Analysis using MySQL & Power BI</h1>
     
     <h2>Overview</h2>
-    <p>This project explores heart disease risk factors using SQL queries and visualizes key insights with Power BI.</p>
+    <p>In this project, I analyzed heart disease risk factors using a structured dataset containing patient demographics, medical history, and clinical measurements. 
+        The data was stored in MySQL, and I utilized SQL queries to extract, clean, and transform key variables related to heart disease, including cholesterol levels, 
+        blood pressure, ECG results, and exercise-induced angina. Tools & Technologies used: MySQL, Power BI, SQL, DAX</p>
     
-    <h2>SQL Query Example</h2>
+    <h2>Queries with Visuals</h2>
+    <pre>
+SELECT *
+from heart_failure_staging
+where HeartDisease = 1;
+    </pre>
+
     <pre>
 SELECT 
     HeartDisease, 
@@ -45,7 +53,75 @@ SELECT
 FROM heart_failure_staging  
 GROUP BY HeartDisease;
     </pre>
+    
+    <pre>
+select 
+	ChestPainType,
+    count(case when HeartDisease = 1 THEN 1 End) as HeartDiseaseSymptom
+from heart_failure_staging
+group by ChestPainType
+ORDER BY HeartDiseaseSymptom DESC;  
+    </pre>
 
+    <pre>
+SELECT 
+    CASE
+        WHEN age BETWEEN 28 AND 35 THEN '28-35'
+        WHEN age BETWEEN 36 AND 50 THEN '36-50'
+        WHEN age BETWEEN 51 AND 64 THEN '51-64'
+        WHEN age > 64 THEN '65+'
+    END AS age_groups,
+    COUNT(*) AS TotalPatients,
+    COUNT(CASE WHEN HeartDisease = 1 THEN 1 END) AS HeartDiseasePatients,
+    ROUND(100.0 * COUNT(CASE WHEN HeartDisease = 1 THEN 1 END) / COUNT(*), 2) AS HeartDisease_Risk_Percentage,
+    ROUND(AVG(FastingBS), 2) AS AvgFastingBS,
+    ROUND(AVG(RestingBP), 2) AS AvgRestingBP,
+    ROUND(AVG(MaxHR), 2) AS AvgMaxHR
+FROM heart_failure_staging
+GROUP BY age_groups
+ORDER BY age_groups;
+    </pre>
+
+    
+    <pre>
+select 
+	case
+		when restingBP BETWEEN 0 and 95 then '80-95'
+        when restingBP BETWEEN 96 and 110 then '96-110'
+        when restingBP BETWEEN 111 and 130 then '111-130'
+        when restingBP BETWEEN 131 and 150 then '131-150'
+        when restingBP > 150 then '150+'
+    end as restingBP_ranges,
+	count(*) as totalHeartDiseasePatients
+from heart_failure_staging
+where HeartDisease = 1
+group by RestingBP_ranges
+order by totalHeartDiseasePatients asc;
+    </pre>
+
+    <pre>
+SELECT *
+FROM (
+    SELECT 
+        Age, 
+        Cholesterol, 
+        RANK() OVER (
+            PARTITION BY 
+                CASE 
+                    WHEN Age BETWEEN 28 AND 35 THEN '28-35'
+                    WHEN Age BETWEEN 36 AND 50 THEN '36-50'
+                    WHEN Age BETWEEN 51 AND 64 THEN '51-64'
+                    ELSE '65+' 
+                END
+            ORDER BY Cholesterol DESC
+        ) AS Cholesterol_Rank
+    FROM heart_failure_staging
+) ranked
+WHERE Cholesterol_Rank <= 5; 
+    </pre>
+
+
+    
     <h2>Power BI Visualizations</h2>
     
     <h3>Cholesterol vs. Heart Disease</h3>
@@ -54,10 +130,11 @@ GROUP BY HeartDisease;
     <h3>Heart Disease by Age Group</h3>
     <img src="screenshots/heart_disease_age.png" alt="Heart Disease by Age">
 
-    <h2>Download Files</h2>
+    <h2>If you want to see the complete project, download these files.</h2>
     <p><a href="heart_failure_project.sql" download>Download SQL Queries</a></p>
     <p><a href="heart_failure_dashboard.pbix" download>Download Power BI Dashboard</a></p>
 
+    <caption id="bottom">Tools & Technologies: MySQL, Power BI, SQL, DAX</caption>
 </body>
 </html>
 
