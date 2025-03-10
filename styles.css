@@ -76,3 +76,40 @@ a {
 text-decoration: none !important;
 color: inherit
 }
+
+/* Remove default list styling */
+.preview-links {
+    list-style: none;
+    display: flex; /* Arrange items in a row */
+    justify-content: center;
+    gap: 20px; /* Add space between previews */
+    padding: 0;
+}
+
+/* Style the link container */
+.preview-links li {
+    text-align: center; /* Center text under image */
+}
+
+/* Style images */
+.preview-links img {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.preview-links a:hover img {
+    transform: scale(1.1);
+}
+
+/* Style captions */
+.preview-links figcaption {
+    font-size: 18px;
+    color: #333; /* Adjust to fit your theme */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
