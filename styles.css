@@ -37,6 +37,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #575757;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 section {
@@ -67,4 +68,8 @@ section h1 {
 .animate1:hover {
     transform: scale(1.1);
     background-color: #2980b9;
+}
+
+a {
+text-decoration: none;
 }
