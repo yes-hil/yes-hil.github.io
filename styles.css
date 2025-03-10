@@ -5,13 +5,15 @@
 }
 
 body {
-    text-family: 'Calibri';
+    font-family: 'Calibri';
     line-height: 1.6;
     background-color: #f4f4f4;
 }
 
 header {
   background-color: #9085BC;
+    padding: 20px 0;
+    text-align: center;
 }
 
 nav ul {
@@ -71,5 +73,6 @@ section h1 {
 }
 
 a {
-text-decoration: none;
+text-decoration: none !important;
+color: inherit
 }
