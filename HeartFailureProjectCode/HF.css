@@ -29,10 +29,17 @@ body {
 
 /* Styling for Code Block */
 .code-block1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 50%;
+    background-color: #9085BC; 
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #6c62a3;
+    color: white;
+    width: 100%;
+    max-width: 600px; 
+    text-align: left;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+}
+
 }
 
 pre {
