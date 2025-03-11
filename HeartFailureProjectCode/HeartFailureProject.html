@@ -39,8 +39,6 @@ WHERE HeartDisease = 1;
 </pre>
    <figcaption class="caption-white">SQL query to filter patients with Heart Disease</figcaption>
 	</div>
-
-        <!-- Image Block -->
         <div class="image-block1">
             <img src="images/ptaffectedbyhd.png" alt="Patients affected by Heart Disease">
             <figcaption>This displays the total amount of affected patients with Heart Disease</figcaption>
@@ -48,12 +46,9 @@ WHERE HeartDisease = 1;
     </figure>
 
 
-
-
-
 	
-
-<figure style="display: flex; align-items: center; gap: 20px;">
+<figure class="code-image-container1">
+<div class="code-block1">
     <pre>
 <code>	
 SELECT 
@@ -63,30 +58,43 @@ FROM heart_failure_staging
 GROUP BY HeartDisease;
 </code>
     </pre>
+ <figcaption class="caption-white">SQL query to filter patients with Heart Disease with average cholesterol.</figcaption>
+</div>
+<div class="image-block1">
 <img src="images/avgcholesterol.png" alt="Patients affected by high Cholesterol and Heart Disease" style="max-width: 300px;" />
 <figcaption> This query explains the average cholesterol in heart disease patients.</figcaption>
+</div>
 </figure>
 
 
 
-<figure style="display: flex; align-items: center; gap: 20px;">
+<figure class="code-image-container2">
+<div class="code-block1">
     <pre>
 <code>	
 SELECT 
 	ChestPainType,
-    COUNT(CASE WHEN HeartDisease = 1 THEN 1 End) AS HeartDiseaseSymptom
+	COUNT(CASE WHEN HeartDisease = 1 THEN 1 End) AS HeartDiseaseSymptom
 FROM heart_failure_staging
 GROUP BY ChestPainType
 ORDER BY HeartDiseaseSymptom DESC; 
+
 </code>
-    </pre>
+    </pre> 
+<figcaption class="caption-white">This SQL query analyzes the relationship between chest pain type and heart disease occurrence. 
+	 It counts the number of patients diagnosed with heart disease (HeartDisease = 1) for each type of chest pain in the
+	 dataset.</figcaption>
+</div>
+<div class="image-block2">	
 <img src="images/chestpainHD.png" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
-<figcaption> This query explains what heart disease patients patients experience with chest pain. Using group by helps the analyst see the highest trends of chest pain types with Heart Disease.
-The reason for using COUNT(CASE) to ensure no NULL values that may have been overlooked when data cleaning are included scuing the data. </figcaption>
+<figcaption> The results are grouped by ChestPainType and sorted in descending order, showing which chest pain type is most 
+	 commonly associated with heart disease. </figcaption>
+</div>
 </figure>
 
 
-<figure style="display: flex; align-items: center; gap: 20px;">
+<figure class="code-image-container2">
+<div class="code-block1">
     <pre>
 <code>	
 SELECT 
@@ -107,39 +115,59 @@ GROUP BY age_groups
 ORDER BY age_groups;
     </code>
     </pre>
-<img src="images/HDriskbyage.png" alt="Heart Disease Risk by Age Group" style="max-width: 300px;" />
-<figcaption> this query is cool </figcaption>
+ <figcaption class="caption-white">This SQL query categorizes patients into age groups and analyzes heart disease risk within each group. 
+	Grouping by age_groups ensures that the analysis is broken down by meaningful age ranges rather than individual ages. 
+	This helps in identifying trends in heart disease occurrence and risk factors among different age groups. Without GROUP BY, 
+	the query would return overall statistics instead of detailed insights per age category.
+	 </figcaption>
+</div>
+<div class="image-block2">
+<img src="images/HDriskbyage.png" alt="Heart Disease Risk by Age Group" />
+<figcaption>The chart is a visual of the calculation with the total number of patients in each age range, the number of patients diagnosed with heart disease, percentage 
+	 of patients with heart disease in each group, average fasting blood sugar (FastingBS), resting blood pressure (RestingBP), and 
+	 maximum heart rate (MaxHR) for each age group. The results help identify age-related trends in heart disease risk.</figcaption>
+</div>
 </figure>
 
 
 	
-<figure style="display: flex; align-items: center; gap: 20px;">
+<figure class="code-image-container1">
+<div class="code-block1">
     <pre>
 <code>
-select 
-	case
-		when restingBP BETWEEN 0 and 95 then '80-95'
-        when restingBP BETWEEN 96 and 110 then '96-110'
-        when restingBP BETWEEN 111 and 130 then '111-130'
-        when restingBP BETWEEN 131 and 150 then '131-150'
-        when restingBP > 150 then '150+'
-    end as restingBP_ranges,
-	count(*) as totalHeartDiseasePatients
-from heart_failure_staging
-where HeartDisease = 1
-group by RestingBP_ranges
-order by totalHeartDiseasePatients asc;
+SELECT 
+	CASE
+	WHEN restingBP BETWEEN 0 AND 95 THEN '80-95'
+        WHEN restingBP BETWEEN 96 AND 110 THEN '96-110'
+        WHEN restingBP BETWEEN 111 AND 130 THEN '111-130'
+        WHEN restingBP BETWEEN 131 AND 150 THEN '131-150'
+        WHEN restingBP > 150 THEN '150+'
+    END AS restingBP_ranges,
+	COUNT(*) as totalHeartDiseasePatients
+FROM heart_failure_staging
+WHERE HeartDisease = 1
+GROUP BY RestingBP_ranges
+ORDER BY totalHeartDiseasePatients ASC;
 </code>
     </pre>
+<figcaption class="caption-white">While GROUP BY is used to categorize patients into blood pressure ranges (so each range is treated as 
+	a unique group), ORDER BY arranges the results based on the total number of heart disease patients in each range. In this case, 
+	using ORDER BY totalHeartDiseasePatients ASC ensures that the ranges with fewer patients come first, and the ranges with the most 
+	patients appear last. This allows for easy identification of the most and least prevalent blood pressure ranges for heart disease
+	patients. GROUP BY organizes the data, while ORDER BY defines the order in which it is presented.</figcaption>
+</div>
+<div class="image-block1">
 <img src="images/restingpulserangesHD.png" alt="Resting Pulse Heart Disease Patients" style="max-width: 300px;" />
-<figcaption> this query is cool </figcaption>
+<figcaption> The query returns the total number of heart disease patients in each blood pressure range and organizes the results in ascending order of the count. </figcaption>
+</div>
 </figure>
 
 
 
 
 
-<figure style="display: flex; align-items: center; gap: 20px;">
+<figure class="code-image-container2">
+<div class="code-block1">
     <pre>
 <code>		
 SELECT *
@@ -162,18 +190,23 @@ FROM (
 WHERE Cholesterol_Rank <= 5; 
 </code>
     </pre>
+<figcaption class="caption-white">The RANK() function is used to assign a rank to each patient within their age group, 
+	ordered by cholesterol levels in descending order. Only the top 5 patients with the highest cholesterol in each group are selected.</figcaption>
+</div>
+<div class="image-block2">
 <img src="images/avgcholesterolbyagegroup.png" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
-<figcaption> I created a CTE to help visualize Cholesterol levels among age groups. I limited it by top 5 highest Cholesterol regardless of 
-	Heart disease or not. Since Cholesterol is a risk factor, seeing the highest cholesterols amoung age groups would provide useful insight. </figcaption>
+<figcaption> This query ranks patients within specific age groups based on their cholesterol levels, and then retrieves the top 5 patients 
+	with the highest cholesterol in each group.  </figcaption>
 </figure>
 
 
 
 
-<figure style="display: flex; align-items: center; gap: 20px;">
+<figure class="code-image-container2">
+<div class="code-block1">
     <pre>
 <code>		
-		WITH HighRiskPatients AS (
+WITH HighRiskPatients AS (
     SELECT 
         HeartDisease,
         CASE WHEN Cholesterol > 200 THEN 1 ELSE 0 END AS HighCholesterol,
@@ -184,7 +217,6 @@ WHERE Cholesterol_Rank <= 5;
     FROM heart_failure_staging
     WHERE HeartDisease = 1
 )
-
 SELECT 
     'High Cholesterol' AS RiskFactor, 
     COUNT(*) AS Frequency
@@ -218,15 +250,37 @@ ORDER BY Frequency DESC
 LIMIT 5;
  </code>
     </pre>
-<img src="images/riskfactorsforHD.png" alt="Heart Disease Risk Factors" style="max-width: 300px;" />
-<figcaption> There's alot going on here. </figcaption>
+<figcaption class="caption-white">This query identifies the top 5 risk factors that contribute to heart disease based on certain medical 
+	conditions in patients who already have heart disease. The query first uses a Common Table Expression (CTE) to classify patients 
+	with heart disease based on several conditions like high cholesterol, high blood pressure, exercise angina, high blood sugar, 
+	and abnormal ST slope. Then, it calculates how many patients exhibit each risk factor and selects the top 5 most frequent risk factors.</figcaption>
+</div>
+<div class="image-block2">
+<img src="images/riskfactorsforHD.png" alt="Heart Disease Risk Factors" />
+<figcaption> The chart  </figcaption>
 </figure>
 
     <h2>If you want to see the complete project, download these files.</h2>
     <p><a href="heart_failure_project.sql" download>Download SQL Queries</a></p>
     <p><a href="heart_failure_dashboard.pbix" download>Download Power BI Dashboard</a></p>
 
-    <caption id="bottom">Tools & Technologies: MySQL, Power BI, SQL, DAX</caption>
+<div class="reference">
+<h2>Refrences for Queries and Charts</h2>
+<caption>
+1. Age: age of the patient [years]
+2. Sex: sex of the patient [M: Male, F: Female]
+3. ChestPainType: chest pain type [TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic]
+4. RestingBP: resting blood pressure [mm Hg]
+5. Cholesterol: serum cholesterol [mm/dl]
+6. FastingBS: fasting blood sugar [1: if FastingBS > 120 mg/dl, 0: otherwise]
+7. RestingECG: resting electrocardiogram results [Normal: Normal, ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
+8. MaxHR: maximum heart rate achieved [Numeric value between 60 and 202]
+9. ExerciseAngina: exercise-induced angina [Y: Yes, N: No]
+10. Oldpeak: oldpeak = ST [Numeric value measured in depression]
+11. ST_Slope: the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping]
+12. HeartDisease: output class [1: heart disease, 0: Normal]
+</caption>
+</div>
 </body>
 </html>
 
