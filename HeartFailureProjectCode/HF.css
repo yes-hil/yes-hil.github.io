@@ -1,4 +1,9 @@
-/* Style captions */
+header {
+  background-color: #9085BC;
+    padding: 20px 0;
+    text-align: center;
+}
+
 .preview-links figcaption {
     font-size: 18px;
     color: #333; /* Adjust to fit your theme */
