@@ -44,7 +44,7 @@ h1, h2, p {
     justify-content: center;
     align-items: flex-start;
     gap: 30px;
-   max-width: 600px;
+   max-width: 100%;
   margin-bottom: 40px;
 }
 
@@ -54,7 +54,7 @@ h1, h2, p {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  max-width: 800px;
+  max-width: 100%;
   margin-bottom: 40px;
 }
 
@@ -67,7 +67,7 @@ h1, h2, p {
     border: 2px solid #5ba3b5;
     color: white;
     width: 100%;
-    max-width: 600px; 
+    max-width: 100%; 
     text-align: left;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15); 
    margin-bottom: 30px;
@@ -81,7 +81,7 @@ h1, h2, p {
     border: 2px solid #6c62a3;
     color: white;
     width: 100%;
-    max-width: 600px; 
+    max-width: 100%; 
     text-align: left;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
    margin-bottom: 30px;
@@ -97,7 +97,7 @@ h1, h2, p {
   border: 2px solid #6c62a3;
   color: white;
   width: 100%;
-  max-width: 900px;
+  max-width: 100%;
   text-align: left;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
@@ -111,7 +111,7 @@ h1, h2, p {
   border: 2px solid #5ba3b5;
   color: white;
   width: 100%;
-  max-width: 900px;
+  max-width: 100%;
   text-align: left;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
   margin-bottom: 30px;
