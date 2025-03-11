@@ -123,11 +123,12 @@ color: inherit
 }
 
 .profile-pic {
-    width: 150px;  /* Adjust as needed */
+    width: 150px; 
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #d1cfe2;
+    margin-bottom: 50px;
 }
 
 h3 {
