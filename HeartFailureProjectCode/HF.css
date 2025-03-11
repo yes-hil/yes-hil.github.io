@@ -141,8 +141,7 @@ pre {
     flex-direction: column;
     align-items: center;
     height:100vh;
-    width: 120vw;
-    max-width: 1500px;
+    width: 100%;
     margin-bottom: 30px;
 }
 
@@ -151,14 +150,13 @@ pre {
   flex-direction: column;
   align-items: center;
   height:100vh;
-  width: 120vw;
+  width: 100%;
  max-width: 1500px;
   margin-bottom: 30px; 
 }
 
 img {
-    width: 100%;
-    max-width: 1500px;
+    width: 120vw;
     height: auto;
     border: 1px solid #ddd;
 }
