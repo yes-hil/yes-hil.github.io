@@ -104,4 +104,34 @@ color: inherit
     transform: scale(1.1);
 }
 
+.about-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-pic {
+    width: 150px;  /* Adjust as needed */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.about-text {
+    font-size: 14px;
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    text-align: justify;
+}
 
