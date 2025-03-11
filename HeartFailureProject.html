@@ -51,25 +51,44 @@ where HeartDisease = 1;
 <img src="images/ptaffectedbyhd.png" alt="Patients affected by Heart Disease" style="max-width: 300px;" />
 <figcaption>This displays the total amount of affected patients with Heart Disease</figcaption>
 </figure>
-	
+
+
+<figure style="display: flex; align-items: center; gap: 20px;">
     <pre>
+<code>	
 SELECT 
     HeartDisease, 
     AVG(Cholesterol) AS AvgCholesterol  
 FROM heart_failure_staging  
 GROUP BY HeartDisease;
+</code>
     </pre>
-    
-    <pre>
-select 
-	ChestPainType,
-    count(case when HeartDisease = 1 THEN 1 End) as HeartDiseaseSymptom
-from heart_failure_staging
-group by ChestPainType
-ORDER BY HeartDiseaseSymptom DESC;  
-    </pre>
+<img src="images/avgcholesterol.png" alt="Patients affected by high Cholesterol and Heart Disease" style="max-width: 300px;" />
+<figcaption> This query explains the average cholesterol in heart disease patients.</figcaption>
+</figure>
 
+
+
+<figure style="display: flex; align-items: center; gap: 20px;">
     <pre>
+<code>	
+SELECT 
+	ChestPainType,
+    COUNT(CASE WHEN HeartDisease = 1 THEN 1 End) AS HeartDiseaseSymptom
+FROM heart_failure_staging
+GROUP BY ChestPainType
+ORDER BY HeartDiseaseSymptom DESC; 
+</code>
+    </pre>
+<img src="images/chestpainHD.png" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
+<figcaption> This query explains what heart disease patients patients experience with chest pain. Using group by helps the analyst see the highest trends of chest pain types with Heart Disease.
+The reason for using COUNT(CASE) to ensure no NULL values that may have been overlooked when data cleaning are included scuing the data. </figcaption>
+</figure>
+
+
+<figure style="display: flex; align-items: center; gap: 20px;">
+    <pre>
+<code>	
 SELECT 
     CASE
         WHEN age BETWEEN 28 AND 35 THEN '28-35'
@@ -86,8 +105,15 @@ SELECT
 FROM heart_failure_staging
 GROUP BY age_groups
 ORDER BY age_groups;
+    </code>
     </pre>
+<img src="images/________" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
+<figcaption> This query explains what heart disease patients patients experience with chest pain. Using group by helps the analyst see the highest trends of chest pain types with Heart Disease.
+The reason for using COUNT(CASE) to ensure no NULL values that may have been overlooked when data cleaning are included scuing the data. </figcaption>
+</figure>
 
+
+	
     
     <pre>
 select 
@@ -105,7 +131,14 @@ group by RestingBP_ranges
 order by totalHeartDiseasePatients asc;
     </pre>
 
+
+
+
+
+
+<figure style="display: flex; align-items: center; gap: 20px;">
     <pre>
+<code>		
 SELECT *
 FROM (
     SELECT 
@@ -124,9 +157,19 @@ FROM (
     FROM heart_failure_staging
 ) ranked
 WHERE Cholesterol_Rank <= 5; 
+</code>
     </pre>
+<img src="images/________" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
+<figcaption> I created a CTE to help visualize Cholesterol levels among age groups. I limited it by top 5 highest Cholesterol regardless of 
+	Heart disease or not. Since Cholesterol is a risk factor, seeing the highest cholesterols amoung age groups would provide useful insight. </figcaption>
+</figure>
 
-	<pre>
+
+
+
+<figure style="display: flex; align-items: center; gap: 20px;">
+    <pre>
+<code>		
 		WITH HighRiskPatients AS (
     SELECT 
         HeartDisease,
@@ -170,16 +213,11 @@ FROM HighRiskPatients
 WHERE AbnormalSTSlope = 1
 ORDER BY Frequency DESC
 LIMIT 5;
-	</pre>
-
-    
-    <h2>Power BI Visualizations</h2>
-    
-    <h3>Cholesterol vs. Heart Disease</h3>
-    <img src="screenshots/cholesterol_analysis.png" alt="Cholesterol Analysis">
-    
-    <h3>Heart Disease by Age Group</h3>
-    <img src="screenshots/heart_disease_age.png" alt="Heart Disease by Age">
+ </code>
+    </pre>
+<img src="images/riskfactorsforHD.png" alt="Heart Disease Risk Factors" style="max-width: 300px;" />
+<figcaption> There's alot going on here. </figcaption>
+</figure>
 
     <h2>If you want to see the complete project, download these files.</h2>
     <p><a href="heart_failure_project.sql" download>Download SQL Queries</a></p>
