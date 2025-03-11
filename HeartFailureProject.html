@@ -40,12 +40,18 @@
         blood pressure, ECG results, and exercise-induced angina. Tools & Technologies used: MySQL, Power BI, SQL, DAX</p>
     
     <h2>Queries with Visuals</h2>
+<figure style="display: flex; align-items: center; gap: 20px;">
     <pre>
+<code>
 SELECT *
 from heart_failure_staging
 where HeartDisease = 1;
+</code>
     </pre>
-
+<img src="images/ptaffectedbyhd.png" alt="Patients affected by Heart Disease" style="max-width: 300px;">
+<figcaption>This displays the total amount of affected patients with Heart Disease</figcaption>
+</figure>
+	
     <pre>
 SELECT 
     HeartDisease, 
@@ -120,6 +126,51 @@ FROM (
 WHERE Cholesterol_Rank <= 5; 
     </pre>
 
+	<pre>
+		WITH HighRiskPatients AS (
+    SELECT 
+        HeartDisease,
+        CASE WHEN Cholesterol > 200 THEN 1 ELSE 0 END AS HighCholesterol,
+        CASE WHEN RestingBP > 130 THEN 1 ELSE 0 END AS HighBloodPressure,
+        CASE WHEN ExerciseAngina = 'Y' THEN 1 ELSE 0 END AS ExerciseAngina,
+        CASE WHEN FastingBS = 1 THEN 1 ELSE 0 END AS HighBloodSugar,
+        CASE WHEN ST_Slope IN ('Flat', 'Down') THEN 1 ELSE 0 END AS AbnormalSTSlope
+    FROM heart_failure_staging
+    WHERE HeartDisease = 1
+)
+
+SELECT 
+    'High Cholesterol' AS RiskFactor, 
+    COUNT(*) AS Frequency
+FROM HighRiskPatients
+WHERE HighCholesterol = 1
+UNION ALL
+SELECT 
+    'High Blood Pressure' AS RiskFactor, 
+    COUNT(*) AS Frequency
+FROM HighRiskPatients
+WHERE HighBloodPressure = 1
+UNION ALL
+SELECT 
+    'Exercise Angina' AS RiskFactor, 
+    COUNT(*) AS Frequency
+FROM HighRiskPatients
+WHERE ExerciseAngina = 1
+UNION ALL
+SELECT 
+    'High Blood Sugar' AS RiskFactor, 
+    COUNT(*) AS Frequency
+FROM HighRiskPatients
+WHERE HighBloodSugar = 1
+UNION ALL
+SELECT 
+    'Abnormal ST Slope' AS RiskFactor, 
+    COUNT(*) AS Frequency
+FROM HighRiskPatients
+WHERE AbnormalSTSlope = 1
+ORDER BY Frequency DESC
+LIMIT 5;
+	</pre>
 
     
     <h2>Power BI Visualizations</h2>
