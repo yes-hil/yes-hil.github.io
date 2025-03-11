@@ -126,12 +126,13 @@ h3 {
 }
 
 .about-text {
-    font-size: 20px;
+    font-size: 22px;
     background-color: #9085BC;
-    padding: 25px;
+    padding: 35px;
     border-radius: 14px;
     width: 100%;
     max-width: 500px;
     text-align: justify;
+    color: white;
 }
 
