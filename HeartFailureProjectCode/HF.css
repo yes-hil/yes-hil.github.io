@@ -15,7 +15,7 @@ body {
 }
 
 /* Container for side-by-side layout */
-.code-image-container {
+.code-image-container1 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
