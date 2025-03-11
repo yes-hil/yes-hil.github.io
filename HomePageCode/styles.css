@@ -53,6 +53,15 @@ section h3 {
     padding: 50px;
 }
 
+
+address {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;     
+    padding: 20px; 
+}
+
 .animate1 {
     padding: 15px 30px;
     font-size: 18px;
@@ -77,7 +86,7 @@ text-decoration: none !important;
 color: inherit
 }
 
-/* Remove default list styling */
+
 .preview-links {
     list-style: none;
     display: flex; /* Arrange items in a row */
@@ -86,12 +95,12 @@ color: inherit
     padding: 0;
 }
 
-/* Style the link container */
+
 .preview-links li {
     text-align: center; /* Center text under image */
 }
 
-/* Style images */
+
 .preview-links img {
     width: 200px; /* Adjust size as needed */
     height: auto;
@@ -99,7 +108,7 @@ color: inherit
     transition: transform 0.3s ease;
 }
 
-/* Hover effect */
+
 .preview-links a:hover img {
     transform: scale(1.1);
 }
@@ -118,6 +127,7 @@ color: inherit
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid #d1cfe2;
 }
 
 h3 {
@@ -130,8 +140,8 @@ h3 {
     background-color: #9085BC;
     padding: 35px;
     border-radius: 14px;
-    width: 90%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 800px;
     text-align: center;
     color: white !important;
     display: block;
