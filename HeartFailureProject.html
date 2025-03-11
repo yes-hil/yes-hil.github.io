@@ -107,7 +107,7 @@ GROUP BY age_groups
 ORDER BY age_groups;
     </code>
     </pre>
-<img src="images/avgcholesterolbyagegroup.png" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
+<img src="images/______" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
 <figcaption> This query explains what heart disease patients patients experience with chest pain. Using group by helps the analyst see the highest trends of chest pain types with Heart Disease.
 The reason for using COUNT(CASE) to ensure no NULL values that may have been overlooked when data cleaning are included scuing the data. </figcaption>
 </figure>
@@ -159,7 +159,7 @@ FROM (
 WHERE Cholesterol_Rank <= 5; 
 </code>
     </pre>
-<img src="images/________" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
+<img src="images/avgcholesterolbyagegroup.png" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
 <figcaption> I created a CTE to help visualize Cholesterol levels among age groups. I limited it by top 5 highest Cholesterol regardless of 
 	Heart disease or not. Since Cholesterol is a risk factor, seeing the highest cholesterols amoung age groups would provide useful insight. </figcaption>
 </figure>
