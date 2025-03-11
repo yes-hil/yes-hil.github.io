@@ -44,10 +44,10 @@
 
 
 	
-<figure style="display: flex; align-items: flex-start; gap: 20px;">
-
+<figure style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
+    <!-- Code Block -->
     <div style="display: flex; flex-direction: column; align-items: center; max-width: 50%;">
-        <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;">
+        <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; font-family: monospace; font-size: 14px; max-width: 100%; border: 1px solid #ddd;">
 <code>
 SELECT *
 FROM heart_failure_staging
@@ -57,12 +57,13 @@ WHERE HeartDisease = 1;
         <figcaption>SQL query to filter patients with Heart Disease</figcaption>
     </div>
 
-
+    <!-- Image Block -->
     <div style="display: flex; flex-direction: column; align-items: center; max-width: 50%;">
-        <img src="images/ptaffectedbyhd.png" alt="Patients affected by Heart Disease" style="max-width: 100%; height: auto;">
+        <img src="images/ptaffectedbyhd.png" alt="Patients affected by Heart Disease" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
         <figcaption>This displays the total amount of affected patients with Heart Disease</figcaption>
     </div>
 </figure>
+
 
 
 
