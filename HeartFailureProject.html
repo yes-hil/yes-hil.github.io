@@ -40,17 +40,24 @@
         blood pressure, ECG results, and exercise-induced angina. Tools & Technologies used: MySQL, Power BI, SQL, DAX</p>
     
     <h2>Queries with Visuals</h2>
-<figure style="display: flex; align-items: center; gap: 20px;">
-    <pre>
+<<figure style="display: flex; align-items: center; gap: 20px;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px;">
 <code>
 SELECT *
-from heart_failure_staging
-where HeartDisease = 1;
+FROM heart_failure_staging
+WHERE HeartDisease = 1;
 </code>
-    </pre>
-<img src="images/ptaffectedbyhd.png" alt="Patients affected by Heart Disease" style="max-width: 300px;" />
-<figcaption>This displays the total amount of affected patients with Heart Disease</figcaption>
+        </pre>
+        <figcaption>SQL query to filter patients with Heart Disease</figcaption>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="images/ptaffectedbyhd.png" alt="Patients affected by Heart Disease" style="max-width: 300px;">
+        <figcaption>This displays the total amount of affected patients with Heart Disease</figcaption>
+    </div>
 </figure>
+
 
 
 <figure style="display: flex; align-items: center; gap: 20px;">
