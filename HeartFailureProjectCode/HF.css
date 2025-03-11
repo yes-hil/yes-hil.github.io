@@ -78,3 +78,10 @@ figcaption {
     color: #555;
     text-align: center;
 }
+
+.caption-white {
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
