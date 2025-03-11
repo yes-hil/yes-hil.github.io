@@ -39,13 +39,15 @@ pre {
     background-color: #9085BC;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #9085BC;
     overflow-x: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
     font-family: monospace;
     font-size: 14px;
     max-width: 100%;
+    color: white;
+    display: block;
 }
 
 /* Styling for Image Block */
