@@ -114,15 +114,15 @@ GROUP BY age_groups
 ORDER BY age_groups;
     </code>
     </pre>
-<img src="images/______" alt="Heart Disease ranked with Chest Pain" style="max-width: 300px;" />
-<figcaption> This query explains what heart disease patients patients experience with chest pain. Using group by helps the analyst see the highest trends of chest pain types with Heart Disease.
-The reason for using COUNT(CASE) to ensure no NULL values that may have been overlooked when data cleaning are included scuing the data. </figcaption>
+<img src="images/HDriskbyage.png" alt="Heart Disease Risk by Age Group" style="max-width: 300px;" />
+<figcaption> this query is cool </figcaption>
 </figure>
 
 
 	
-    
+<figure style="display: flex; align-items: center; gap: 20px;">
     <pre>
+<code>
 select 
 	case
 		when restingBP BETWEEN 0 and 95 then '80-95'
@@ -136,8 +136,11 @@ from heart_failure_staging
 where HeartDisease = 1
 group by RestingBP_ranges
 order by totalHeartDiseasePatients asc;
+</code>
     </pre>
-
+<img src="images/restingpulserangesHD.png" alt="Resting Pulse Heart Disease Patients" style="max-width: 300px;" />
+<figcaption> this query is cool </figcaption>
+</figure>
 
 
 
