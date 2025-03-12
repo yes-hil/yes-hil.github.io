@@ -126,7 +126,7 @@ h1, h2, p {
 }
 
 
-pre {
+.pre1, .pre2 {
     padding: 10px;
     overflow-x: auto;
     white-space: pre-wrap;
@@ -137,6 +137,14 @@ pre {
     color: white;
     display: block;
    margin-bottom: 20px;
+}
+
+.pre1 {
+   background-color: #7ec4cf; 
+}
+
+.pre2 {
+   background-color: #9085BC; 
 }
 
 .image-block1 {
@@ -158,7 +166,6 @@ pre {
 img {      
     height: auto;        
     width: 100%;
-    
 }
 
 .image1 {
