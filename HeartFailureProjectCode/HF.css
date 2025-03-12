@@ -163,9 +163,12 @@ pre {
 
 img {      
     height: auto;        
-    max-width: 100%;         
-    max-height: auto;  
-    border: 1px solid #ddd;
+    width: 100%;
+    
+}
+
+.image2, .image3 {
+   max-width: 1200px;
 }
 
 
