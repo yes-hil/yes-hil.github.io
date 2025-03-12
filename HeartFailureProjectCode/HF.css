@@ -127,10 +127,7 @@ h1, h2, p {
 
 
 pre {
-    background-color: #f4f4f4;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
     overflow-x: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
