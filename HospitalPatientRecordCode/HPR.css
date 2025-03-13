@@ -37,7 +37,7 @@ h3, p {
   text-align: center;
 }
 
-frame {
+iframe {
   margin-top: 30px;
    display: flex;
     justify-content: center;  
