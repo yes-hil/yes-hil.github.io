@@ -21,3 +21,22 @@ nav ul li a {
     padding: 10px 20px;
     display: block;
 }
+
+body {
+    font-family: Calibri, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    padding: 0;
+}
+h3, p {
+  margin-bottom: 70px;
+}
+
+.intro {
+  margin-top: 30px;
+   display: flex;
+    justify-content: center;  
+    align-items: center;         
+    padding: 20px;
+  
+}
